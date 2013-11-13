@@ -1,0 +1,156 @@
+section.container {
+  @include outer-container;
+  @include font-face(FontAwesome, '/fonts/FontAwesome');
+  header.top-bar {
+    $charcoal: black;
+    background: $charcoal;
+    height: 80px;
+    opacity: 0.6;
+    @include linear-gradient(lighten($charcoal,10), $charcoal);
+    @include span-columns(12);
+
+    div.pull-left {
+      @include span-columns(6 of 12);
+      div.logo {
+        padding-top: 16px;
+        padding-left: 20px;
+
+        img {
+          height: 50px;
+          width: auto;
+        }
+      }
+    }
+
+    div.pull-right {
+      @include span-columns(6 of 12);
+      @include omega();
+      nav {
+        ul {
+          font-family: sans-serif;
+          font-weight: 700;
+          margin: 0;
+          padding-top: 34px;
+
+          li {
+            @include pad(default 2.0em);
+            display: inline;
+            list-style-type: none;
+            a {
+              text-decoration: none;
+              color: white;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.masthead {
+    @include outer-container;
+    @include background(url("/images/masthead.png") 100% 100% no-repeat);
+    background-position: 100% 100%;
+    background-size: 100% 106%;
+    height: 500px;
+
+    article {
+      position: relative;
+      hgroup {
+        z-index: 100;
+        position: absolute;
+        color: white;
+        text-transform: uppercase;
+
+        top: 217px;
+        right: 68px;
+        line-height: 27px;
+        text-align: right;
+        h1 {
+          font-size: 44px;
+        }
+        h3 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  section.content.index {
+    @include outer-container;
+    color: #777171;
+    text-transform: uppercase;
+    header {
+      text-align: center;
+      margin-bottom: 90px;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        text-align: center;
+        @include span-columns(4);
+        display: inline-block;
+
+        span {
+          i {
+            font-size: 66px;
+            border: 1px solid;
+            border-radius: 100px;
+            padding: 50px;
+          }
+        }
+        h4 {
+          margin-top: 90px;
+        }
+      }
+    }
+  }
+
+  footer {
+    @include outer-container;
+    background-color: #444444;
+    section.main-content {
+      @include span-columns(12);
+      @include row(table);
+
+      article.description {
+        @include span-columns(8);
+        @include pad();
+
+        padding-left: 30px;
+        color: white;
+
+        h4 {
+          color: #686464;
+          text-transform: uppercase;
+        }
+        p {
+          text-align: justify;
+          font-size: 15px;
+          width: 488px;
+        }
+      }
+      ul.company {
+        @include span-columns(4);
+        @include reset-display;
+        @include pad();
+        list-style-type: none;
+
+        h4 {
+          color: #686464;
+          text-transform: uppercase;
+        }
+        li a{
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+    section.copyright {
+      text-transform: uppercase;
+      text-align: center;
+      color: #686464;
+      margin-bottom: 14px;
+    }
+  }
+}
